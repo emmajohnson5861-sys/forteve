@@ -5,6 +5,7 @@
 @import "./styles/faq-section.css";
 @import "./styles/showreel-section.css";
 @import "./styles/cta-section.css";
+@import "./styles/footer-section.css";
 @import "tailwindcss";
 
 :root {
