@@ -2,8 +2,13 @@
 
 import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 const availableServices = [
   'Branding',
@@ -15,6 +20,7 @@ const availableServices = [
 
 export function CtaSection() {
   const containerRef = useRef(null);
+  const bgImgRef = useRef(null);
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -24,9 +30,24 @@ export function CtaSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  // Attach exact GSAP hover animation to all .main-button buttons in CTA section
+  // Attach exact GSAP hover & parallax scroll animation to CTA section
   useGSAP(() => {
     if (!containerRef.current) return;
+
+    // Smooth parallax scroll effect on background image
+    if (bgImgRef.current) {
+      gsap.to(bgImgRef.current, {
+        yPercent: -20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    }
+
     const buttons = containerRef.current.querySelectorAll('.main-button');
 
     buttons.forEach((btn) => {
@@ -91,6 +112,17 @@ export function CtaSection() {
     <section ref={containerRef} className="section_cta" id="contact-cta">
       <div className="padding-global is-tiny">
         <div className="cta_component">
+          {/* Background image with vertical parallax scroll effect */}
+          <div className="cta_bg_wrap">
+            <img
+              ref={bgImgRef}
+              src="/assets/showreel.png"
+              alt="CTA Background"
+              className="cta_bg_img"
+            />
+            <div className="cta_bg_overlay"></div>
+          </div>
+
           <div className="padding-section-medium" style={{ paddingTop: '2rem' }}></div>
           <div className="padding-global">
             <div className="cta_content">

@@ -17,10 +17,6 @@
 .cta_component {
   border-radius: 1.5rem !important;
   background-color: #0b0c10 !important;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/showreel.png') !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
   flex-flow: column;
   justify-content: center;
   align-items: center;
@@ -31,6 +27,35 @@
   padding: 4rem 2rem;
 }
 
+.cta_bg_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cta_bg_img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  z-index: 1;
+  will-change: transform;
+}
+
+.cta_bg_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
 .cta_content {
   display: grid !important;
   grid-template-columns: 1fr 1fr;
@@ -39,7 +64,7 @@
   margin: 0 auto;
   align-items: center !important;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   position: relative;
 }
 
