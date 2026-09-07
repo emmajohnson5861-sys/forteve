@@ -73,7 +73,7 @@ export const Header = () => {
           
           {/* Logo */}
           <div className="logo-wrapper sec-header__logo-wrapper" id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a9104a-13a91046">
-            <a aria-current="page" className="logo-link sec-header__logo-link w-inline-block w--current" href="#sec-banner">
+            <a aria-current="page" className="logo-link sec-header__logo-link w-inline-block w--current" href="#top">
               <div className="logo-wrap">
                 <img 
                   alt="Forteve Logo" 
@@ -107,7 +107,7 @@ export const Header = () => {
                       <div className="navigation-content-list">
                         
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block w--current" href="#sec-banner" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block w--current" href="#top" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
                               <div className="navigation-link-text">Home</div>
                               <div className="navigation-link-text">Home</div>
@@ -147,7 +147,7 @@ export const Header = () => {
                         </div>
 
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block" href="#sec-contact" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block" href="#contact-cta" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
                               <div className="navigation-link-text">Contact</div>
                               <div className="navigation-link-text">Contact</div>
@@ -160,7 +160,7 @@ export const Header = () => {
 
                       <div className="navigation-button-wrap" id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a91087-13a91046">
                         <div className="navigation-button-block">
-                          <a className="main-button btn-primary sec-header__btn w-inline-block" href="#sec-contact" onClick={() => setNavOpen(false)}>
+                          <a className="main-button btn-primary sec-header__btn w-inline-block" href="#contact-cta" onClick={() => setNavOpen(false)}>
                             <div className="main-button-block">
                               <div className="button-text">Get in Touch</div>
                               <div className="button-text">Get in Touch</div>
@@ -187,7 +187,7 @@ export const Header = () => {
           {/* Quick Nav Bar */}
           <div className="nav-wrapper sec-header__nav-wrapper">
             <div className="nav-link-block">
-              <a className="nav-link w-inline-block w--current" href="#sec-banner">
+              <a className="nav-link w-inline-block w--current" href="#top">
                 <div className="nav-text-wrap">
                   <div className="nav-text">Home</div>
                   <div className="nav-text">Home</div>
@@ -205,7 +205,7 @@ export const Header = () => {
                   <div className="nav-text">Projects</div>
                 </div>
               </a>
-              <a className="nav-link w-inline-block" href="#sec-contact">
+              <a className="nav-link w-inline-block" href="#contact-cta">
                 <div className="nav-text-wrap">
                   <div className="nav-text">Contact</div>
                   <div className="nav-text">Contact</div>

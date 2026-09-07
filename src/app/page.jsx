@@ -3,6 +3,9 @@ import { BannerSection } from '../components/sections/BannerSection';
 import { AboutSection } from '../components/sections/AboutSection';
 import { ShowreelSection } from '../components/sections/ShowreelSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
+import { ProjectsSection } from '../components/sections/ProjectsSection';
+import { TechStackSection } from '../components/sections/TechStackSection';
+import { TestimonialsSection } from '../components/sections/TestimonialsSection';
 import { ProcessSection } from '../components/sections/ProcessSection';
 import { FaqSection } from '../components/sections/FaqSection';
 import { CtaSection } from '../components/sections/CtaSection';
@@ -22,6 +25,9 @@ export default function Home() {
           <ServicesSection />
           <ProcessSection />
           <ShowreelSection />
+          <ProjectsSection />
+          <TechStackSection />
+          <TestimonialsSection />
           <FaqSection />
           <CtaSection />
           <Footer />

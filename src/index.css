@@ -2,6 +2,9 @@
 @import "./styles/forteve-banner.css";
 @import "./styles/forteve.shared.08906c3c1.css";
 @import "./styles/process-section.css";
+@import "./styles/projects-section.css";
+@import "./styles/techstack-section.css";
+@import "./styles/testimonials-section.css";
 @import "./styles/faq-section.css";
 @import "./styles/showreel-section.css";
 @import "./styles/cta-section.css";
@@ -15,7 +18,10 @@
 
   /* Theme Tokens */
   --forteve-primary: #0b0c10;
-  --forteve-accent: #6366F1;
+  --forteve-secondary: #e87c0d;
+  --forteve-accent: #e87c0d;
+  --_colors---primary--accent: #e87c0d;
+  --_colors---primary--secondary: #e87c0d;
   --forteve-bg: #ffffff;
   --forteve-surface: #181920;
   --forteve-text: #ffffff;
@@ -23,6 +29,17 @@
   --forteve-border: rgba(255, 255, 255, 0.08);
 
   --container-max-w: 1600px;
+}
+
+/* Global Brand Secondary & Accent Color Utility Classes (#e87c0d) */
+.text-color-secondary,
+.text-color-accent {
+  color: #e87c0d !important;
+}
+
+.bg-color-secondary,
+.bg-color-accent {
+  background-color: #e87c0d !important;
 }
 
 body {
@@ -103,9 +120,16 @@ h1, h2, h3, h4, h5, h6, .header-title, .font-heading, .font-narrow {
 
 .nav-link:hover .nav-text,
 .navigation-link:hover .navigation-link-text,
-.main-button:hover .button-text,
-.social-link:hover .social-icon {
+.main-button:hover .button-text {
   transform: translateY(-100%) !important;
+}
+
+.main-button .button-icon {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.main-button:hover .button-icon {
+  transform: rotate(90deg) !important;
 }
 
 @layer components {
@@ -187,4 +211,11 @@ h1, h2, h3, h4, h5, h6, .header-title, .font-heading, .font-narrow {
   width: auto !important;
   object-fit: contain !important;
 }
+
+@media screen and (min-width: 1440px) {
+  .heading-style-h2 {
+    font-size: 8rem !important;
+  }
+}
+
 

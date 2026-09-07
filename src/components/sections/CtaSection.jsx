@@ -129,7 +129,7 @@ export function CtaSection() {
               {/* Left Column */}
               <div className="cta_left_column">
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <SubtitleMarquee text="Get Started — " />
+                  <SubtitleMarquee text="Get Started — " variant="light" />
                 </div>
                 <div className="text-align-left">
                   <div className="text-color-white">

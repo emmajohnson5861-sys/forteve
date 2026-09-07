@@ -339,28 +339,11 @@
 }
 
 .cb-summary-header {
-  margin: 0 0 40px 0;
-  font-weight: 500;
-  font-size: 45px;
-  line-height: 100%;
-  letter-spacing: -.02em;
-  text-align: center;
-}
-
-.cb-summary-header h2 {
-  font-family: "Suisse Intl", sans-serif !important;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  .cb-summary-header {
-    margin: 0 0 120px 0;
-    font-size: 90px;
-  }
+  margin: 0 0 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .cb-summary-testimonials {
@@ -1211,7 +1194,7 @@ img {
 }
 
 .text-color-secondary {
-  color: var(--neutral-color--primary-neutral);
+  color: #e87c0d !important;
 }
 
 .spacer-xlarge {
@@ -1425,7 +1408,7 @@ img {
 
 @media screen and (min-width: 1440px) {
   .heading-style-h2 {
-    font-size: 12rem;
+    font-size: 8rem;
   }
 
   .service-title {
@@ -2105,18 +2088,27 @@ img {
   padding: 0 !important;
 }
 
+.section-home-service .service-title-wrap {
+  display: block !important;
+  height: 7.5rem !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .section-home-service .service-title {
   z-index: 3 !important;
   font-family: var(--_typography---font-family--primary), "Mona Sans Narrow", Impact, sans-serif !important;
   color: var(--primary-color--white, #ffffff) !important;
   text-transform: uppercase !important;
   mix-blend-mode: difference !important;
-  font-size: 9vw !important;
+  font-size: 7.5rem !important;
   line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
-  height: 9vw !important;
+  height: 7.5rem !important;
   white-space: nowrap !important;
   transition: none !important;
   transform: none !important;
@@ -2155,22 +2147,19 @@ img {
   object-fit: cover !important;
 }
 
-@media screen and (min-width: 1440px) {
-  .section-home-service .service-title-wrap,
-  .section-home-service .service-title {
-    height: 8vw !important;
-    font-size: 8vw !important;
-  }
-  .section-home-service .service-image-wrap {
-    top: -30% !important;
-  }
-}
-
 @media screen and (min-width: 1920px) {
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 10rem !important;
-    font-size: 10rem !important;
+    height: 9.5rem !important;
+    font-size: 9.5rem !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section-home-service .service-title-wrap,
+  .section-home-service .service-title {
+    height: 6rem !important;
+    font-size: 6rem !important;
   }
 }
 
@@ -2184,8 +2173,24 @@ img {
   }
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 12vw !important;
-    font-size: 12vw !important;
+    height: 4.5rem !important;
+    font-size: 4.5rem !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-home-service .service-title-wrap,
+  .section-home-service .service-title {
+    height: 3.25rem !important;
+    font-size: 3.25rem !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .section-home-service .service-title-wrap,
+  .section-home-service .service-title {
+    height: 2.25rem !important;
+    font-size: 2.25rem !important;
   }
 }
 
@@ -2194,7 +2199,7 @@ img {
   align-items: center !important;
   gap: 0.75rem !important;
   width: 16rem !important;
-  margin-bottom: 2.5rem !important;
+  margin-bottom: 0 !important;
   white-space: nowrap !important;
   position: relative !important;
 }
@@ -2258,14 +2263,61 @@ img {
   visibility: visible !important;
 }
 
-/* Light theme (About section) */
+/* Subtitle Theme Variants (Light BG & Dark BG) */
+.subtitle.subtitle-dark,
 .section_about-markeio .subtitle,
-.sec-about .subtitle {
-  color: #71717a !important;
+.sec-about .subtitle,
+.cb-faq .subtitle {
+  color: #474747 !important;
 }
 
-/* Dark theme (Services section) */
+.subtitle.subtitle-light,
 .section-home-service .subtitle,
-.sec-services .subtitle {
-  color: #a1a1aa !important;
+.sec-services .subtitle,
+.cta-section .subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* === Unified Master Global Button Styles (Dark & Light Variants across all screens) === */
+.main-button,
+.main-button.alternate-button,
+.main-button.footer-submit-btn,
+.section-home-service .main-button.alternate-button {
+  border-radius: 100px !important;
+  width: auto !important;
+  max-width: max-content !important;
+  padding: 1.25rem 2.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  grid-column-gap: 0.75rem !important;
+  grid-row-gap: 0.75rem !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+.main-button-block {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  height: 1rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.button-text {
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.button-icon {
+  height: 1.125rem !important;
+  width: auto !important;
+  position: relative !important;
+  top: -0.05rem !important;
+  flex-shrink: 0 !important;
 }

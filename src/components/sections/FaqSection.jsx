@@ -147,7 +147,10 @@ export function FaqSection() {
       <div className="cb-faq-container -lg">
         <div className="cb-faq-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem', marginBottom: '2.5rem' }}>
           <SubtitleMarquee text="Frequently Asked Questions — " />
-          <h2>Frequently Ask Question</h2>
+          <h2 className="heading-style-h2">
+            Frequently Ask <br />
+            <span className="text-color-secondary">Question</span>
+          </h2>
         </div>
         <div className="cb-faq-items">
           <FaqDivider />

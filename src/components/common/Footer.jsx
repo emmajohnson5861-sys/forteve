@@ -1,10 +1,44 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export const Footer = () => {
+  const footerRef = useRef(null);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  useGSAP(() => {
+    if (!footerRef.current) return;
+    const buttons = footerRef.current.querySelectorAll('.main-button');
+
+    buttons.forEach((btn) => {
+      const texts = btn.querySelectorAll('.button-text');
+      const icon = btn.querySelector('.button-icon');
+
+      const onMouseEnter = () => {
+        if (texts.length >= 2) {
+          gsap.to(texts, { yPercent: -100, duration: 0.35, ease: 'power2.out' });
+        }
+        if (icon) {
+          gsap.to(icon, { rotate: 90, duration: 0.35, ease: 'power2.out' });
+        }
+      };
+
+      const onMouseLeave = () => {
+        if (texts.length) {
+          gsap.to(texts, { yPercent: 0, duration: 0.35, ease: 'power2.out' });
+        }
+        if (icon) {
+          gsap.to(icon, { rotate: 0, duration: 0.35, ease: 'power2.out' });
+        }
+      };
+
+      btn.addEventListener('mouseenter', onMouseEnter);
+      btn.addEventListener('mouseleave', onMouseLeave);
+    });
+  }, { scope: footerRef });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +52,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer ref={footerRef} className="footer">
       <div className="padding-global is-tiny">
         <div className="footer_wrap">
           <div className="footer_component">
@@ -30,7 +64,7 @@ export const Footer = () => {
                 >
                   <div className="footer_link-label">Services & Contact</div>
                   <div className="footer_lists">
-                    
+
                     {/* List 1 */}
                     <div className="footer_links-list">
                       <a href="https://forteve.com/ui-ux-design-and-development/" className="footer_link nav-link">
@@ -88,6 +122,9 @@ export const Footer = () => {
 
                     {/* List 4 */}
                     <div className="footer_links-list">
+                      <div className="footer_link_label_text" style={{ color: '#474747', fontSize: '0.875rem' }}>
+                        Address:
+                      </div>
                       <div className="footer_link" style={{ whiteSpace: 'normal', lineHeight: 1.5, textTransform: 'none' }}>
                         84j Ghazali Rd, P.E.C.H.S Block 2, Karachi
                       </div>
