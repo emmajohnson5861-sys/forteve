@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#ffffff] text-[#ffffff] antialiased selection:bg-[#6366F1] selection:text-white" suppressHydrationWarning>
+      <body className="bg-[#f4f4f2] text-[#05080C] antialiased selection:bg-[#6366F1] selection:text-white" suppressHydrationWarning>
         {/* Custom Follower Cursor Container */}
         <div className="cb-cursor"></div>
         {children}

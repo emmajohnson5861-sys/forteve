@@ -10,30 +10,51 @@ const servicesData = [
   {
     id: '01',
     num: '(01)',
-    title: 'Design',
+    title: 'CRM Development',
     image: '/assets/68ee90f8393fe398b8270db3_Frame_204.jpg',
-    text: 'Translating brand strategy into stunning visuals that capture attention and emotion.',
+    text: 'Custom customer relationship solutions built to streamline sales workflows and elevate client retention.',
   },
   {
     id: '02',
     num: '(02)',
-    title: 'Identity',
+    title: 'CMS Development',
     image: '/assets/68ee90f82cb86f84f6e79af4_Frame_202.jpg',
-    text: 'Building a distinctive visual and verbal system that expresses who your brand truly is.',
+    text: 'Tailored content management platforms enabling effortless digital publishing and dynamic data management.',
   },
   {
     id: '03',
     num: '(03)',
-    title: 'Strategy',
+    title: 'Web App Development',
     image: '/assets/68ee90f83da8227728cad6fd_Frame_2015.jpg',
-    text: 'Crafting a clear roadmap that defines your brand’s purpose, vision, and market positioning.',
+    text: 'Scalable, high-performance web applications crafted with cutting-edge architectures and reactive design.',
   },
   {
     id: '04',
     num: '(04)',
-    title: 'Rebranding',
+    title: 'Software Development',
     image: '/assets/68ee90f80b05eb5159a3717d_Frame_2012.jpg',
-    text: 'Transforming existing brands with a renewed strategy, design, and communication approach.',
+    text: 'Robust enterprise software solutions engineered for complex business logic and seamless automation.',
+  },
+  {
+    id: '05',
+    num: '(05)',
+    title: 'Mobile App Development',
+    image: '/assets/68ee90f8393fe398b8270db3_Frame_204.jpg',
+    text: 'Intuitive iOS and Android mobile experiences engineered for speed, engagement, and native performance.',
+  },
+  {
+    id: '06',
+    num: '(06)',
+    title: 'Digital Marketing',
+    image: '/assets/68ee90f82cb86f84f6e79af4_Frame_202.jpg',
+    text: 'Data-driven marketing campaigns designed to convert audience attention into measurable brand growth.',
+  },
+  {
+    id: '07',
+    num: '(07)',
+    title: 'UI / UX Design',
+    image: '/assets/68ee90f83da8227728cad6fd_Frame_2015.jpg',
+    text: 'Human-centered digital product design creating seamless user journeys and captivating visual experiences.',
   },
 ];
 
@@ -79,8 +100,6 @@ export const ServicesSection = () => {
   useGSAP(() => {
     if (!containerRef.current) return;
 
-
-
     // 2. Service Cards Interactions with Letter-by-Letter Stagger & 3D Mouse Follow
     const serviceGrids = containerRef.current.querySelectorAll('.service-content-grid');
     serviceGrids.forEach((grid) => {
@@ -122,7 +141,7 @@ export const ServicesSection = () => {
         });
 
         if (numberText) {
-          gsap.to(numberText, { color: '#ffffff', duration: 0.3 });
+          gsap.to(numberText, { color: '#ffffff', duration: 0.3, overwrite: 'auto' });
         }
 
         if (imageWrap) {
@@ -131,6 +150,7 @@ export const ServicesSection = () => {
             scale: 1,
             duration: 0.4,
             ease: 'back.out(1.4)',
+            overwrite: 'auto',
           });
         }
       };
@@ -166,7 +186,7 @@ export const ServicesSection = () => {
         });
 
         if (numberText) {
-          gsap.to(numberText, { color: '', duration: 0.3 });
+          gsap.to(numberText, { color: '', duration: 0.3, overwrite: 'auto' });
         }
 
         if (imageWrap) {
@@ -175,6 +195,7 @@ export const ServicesSection = () => {
             scale: 0.5,
             duration: 0.3,
             ease: 'power2.inOut',
+            overwrite: 'auto',
             onComplete: () => {
               if (xTo) xTo(0);
               if (yTo) yTo(0);
@@ -252,7 +273,6 @@ export const ServicesSection = () => {
 
             <div className="spacer-xlarge"></div>
             <div className="dark-line"></div>
-            <div className="spacer-xlarge"></div>
 
             {/* Service Items Component */}
             <div className="service-component">

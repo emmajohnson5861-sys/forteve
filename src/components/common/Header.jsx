@@ -5,17 +5,7 @@ import gsap from 'gsap';
 
 export const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const drawerRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleNav = () => {
     setNavOpen((prev) => !prev);
@@ -107,30 +97,30 @@ export const Header = () => {
                       <div className="navigation-content-list">
                         
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block w--current" href="#top" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block w--current" href="#sec-services" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
-                              <div className="navigation-link-text">Home</div>
-                              <div className="navigation-link-text">Home</div>
+                              <div className="navigation-link-text">CRM Development</div>
+                              <div className="navigation-link-text">CRM Development</div>
                             </div>
                             <div className="navigation-number">(01)</div>
                           </a>
                         </div>
 
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block" href="#sec-about" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
-                              <div className="navigation-link-text">About</div>
-                              <div className="navigation-link-text">About</div>
+                              <div className="navigation-link-text">CMS Development</div>
+                              <div className="navigation-link-text">CMS Development</div>
                             </div>
                             <div className="navigation-number">(02)</div>
                           </a>
                         </div>
 
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block" href="#sec-projects" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
-                              <div className="navigation-link-text">Projects</div>
-                              <div className="navigation-link-text">Projects</div>
+                              <div className="navigation-link-text">Web App Development</div>
+                              <div className="navigation-link-text">Web App Development</div>
                             </div>
                             <div className="navigation-number">(03)</div>
                           </a>
@@ -139,20 +129,40 @@ export const Header = () => {
                         <div className="navigation-link-block">
                           <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
-                              <div className="navigation-link-text">Services</div>
-                              <div className="navigation-link-text">Services</div>
+                              <div className="navigation-link-text">Software Development</div>
+                              <div className="navigation-link-text">Software Development</div>
                             </div>
                             <div className="navigation-number">(04)</div>
                           </a>
                         </div>
 
                         <div className="navigation-link-block">
-                          <a className="navigation-link w-inline-block" href="#contact-cta" onClick={() => setNavOpen(false)}>
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
                             <div className="navigation-link-wrap">
-                              <div className="navigation-link-text">Contact</div>
-                              <div className="navigation-link-text">Contact</div>
+                              <div className="navigation-link-text">Mobile App Development</div>
+                              <div className="navigation-link-text">Mobile App Development</div>
                             </div>
                             <div className="navigation-number">(05)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">Digital Marketing Agency</div>
+                              <div className="navigation-link-text">Digital Marketing Agency</div>
+                            </div>
+                            <div className="navigation-number">(06)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">UI / UX Design</div>
+                              <div className="navigation-link-text">UI / UX Design</div>
+                            </div>
+                            <div className="navigation-number">(07)</div>
                           </a>
                         </div>
 
@@ -195,14 +205,20 @@ export const Header = () => {
               </a>
               <a className="nav-link w-inline-block" href="#sec-about">
                 <div className="nav-text-wrap">
-                  <div className="nav-text">Studio</div>
-                  <div className="nav-text">Studio</div>
+                  <div className="nav-text">About</div>
+                  <div className="nav-text">About</div>
+                </div>
+              </a>
+              <a className="nav-link w-inline-block" href="#sec-services">
+                <div className="nav-text-wrap">
+                  <div className="nav-text">Services</div>
+                  <div className="nav-text">Services</div>
                 </div>
               </a>
               <a className="nav-link w-inline-block" href="#sec-projects">
                 <div className="nav-text-wrap">
-                  <div className="nav-text">Projects</div>
-                  <div className="nav-text">Projects</div>
+                  <div className="nav-text">Portfolio</div>
+                  <div className="nav-text">Portfolio</div>
                 </div>
               </a>
               <a className="nav-link w-inline-block" href="#contact-cta">
@@ -236,16 +252,6 @@ export const Header = () => {
               </div>
             </div>
           </div>
-
-          {/* Sticky Nav Background Pill (Appears on Scroll) */}
-          <div 
-            className="nav-background" 
-            style={{ 
-              opacity: isScrolled ? 1 : 0, 
-              transition: 'opacity 0.35s ease, background-color 0.35s ease',
-              pointerEvents: 'none' 
-            }}
-          ></div>
 
         </div>
       </div>

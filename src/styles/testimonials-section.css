@@ -1,8 +1,8 @@
 /* === Testimonials Section Styles (Fan-Out Card Animation & Full 1600px Cover) === */
 .cb-summary {
   -webkit-tap-highlight-color: transparent;
-  padding: 8rem 0 10rem;
-  background: #ffffff;
+  padding: 10rem 0;
+  background: #f4f4f2;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -140,3 +140,27 @@
   height: 42px;
   display: block;
 }
+
+.cb-summary-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.cb-summary-author-name {
+  font-family: var(--font-family-primary, "Suisse Intl", sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #05080C;
+  letter-spacing: -0.01em;
+}
+
+.cb-summary-author-role {
+  font-family: var(--font-family-primary, "Suisse Intl", sans-serif);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #556070;
+  line-height: 1.4;
+}
+

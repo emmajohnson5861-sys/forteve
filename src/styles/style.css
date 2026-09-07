@@ -58,7 +58,7 @@
    1. ABOUT SECTION (Markeio)
    ========================================================================== */
 .section_about-markeio {
-  background-color: #ffffff;
+  background-color: #f4f4f2 !important;
   padding: 9rem 0 11rem;
   position: relative;
 }
@@ -121,7 +121,8 @@
 }
 
 .about-card {
-  background-color: #f7f7f7;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 1.8rem;
   padding: 2.8rem 2.5rem 3rem;
   min-height: 310px;
@@ -134,11 +135,12 @@
 
 .about-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
 .about-card--mint,
 .about-card--lavender {
-  background-color: #f7f7f7;
+  background-color: #ffffff !important;
 }
 
 .about-card_icon {
@@ -2038,6 +2040,10 @@ img {
   width: 100% !important;
 }
 
+.section-home-service .heading-style-h2 {
+  margin-bottom: 0 !important;
+}
+
 .section-home-service .button-item {
   justify-self: end !important;
   align-self: flex-end !important;
@@ -2045,7 +2051,8 @@ img {
   width: auto !important;
   display: flex !important;
   justify-content: flex-end !important;
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .section-home-service .main-button.alternate-button {
@@ -2061,6 +2068,8 @@ img {
   grid-template-columns: 0.25fr 1.25fr 1fr !important;
   align-items: center !important;
   width: 100% !important;
+  padding-top: 4rem !important;
+  padding-bottom: 3rem !important;
   position: relative !important;
 }
 
@@ -2081,16 +2090,7 @@ img {
 
 .section-home-service .service-title-wrap {
   display: block !important;
-  height: 9vw !important;
-  overflow: hidden !important;
-  position: relative !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.section-home-service .service-title-wrap {
-  display: block !important;
-  height: 7.5rem !important;
+  height: 5.25rem !important;
   overflow: hidden !important;
   position: relative !important;
   margin: 0 !important;
@@ -2103,12 +2103,13 @@ img {
   color: var(--primary-color--white, #ffffff) !important;
   text-transform: uppercase !important;
   mix-blend-mode: difference !important;
-  font-size: 7.5rem !important;
+  font-size: 5.25rem !important;
   line-height: 1 !important;
+  text-align: left !important;
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
-  height: 7.5rem !important;
+  height: 5.25rem !important;
   white-space: nowrap !important;
   transition: none !important;
   transform: none !important;
@@ -2118,12 +2119,14 @@ img {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
+  text-align: left !important;
 }
 
 .section-home-service .service-title.is-bottom {
   position: absolute !important;
   top: 100% !important;
   left: 0 !important;
+  text-align: left !important;
 }
 
 .section-home-service .service-content-grid:hover .service-title {
@@ -2132,8 +2135,8 @@ img {
 
 .section-home-service .service-image-wrap {
   z-index: 1 !important;
-  width: 15rem !important;
-  height: 15rem !important;
+  width: 12rem !important;
+  height: 12rem !important;
   position: absolute !important;
   inset: -50% 0% 0% 15% !important;
   pointer-events: none !important;
@@ -2145,21 +2148,31 @@ img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+.section-home-service .service-title-wrap,
+.section-home-service .service-title,
+.section-home-service .service-title .word,
+.section-home-service .service-title .char {
+  text-align: left !important;
 }
 
 @media screen and (min-width: 1920px) {
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 9.5rem !important;
-    font-size: 9.5rem !important;
+    height: 5.25rem !important;
+    font-size: 5.25rem !important;
+    text-align: left !important;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 6rem !important;
-    font-size: 6rem !important;
+    height: 4.5rem !important;
+    font-size: 4.5rem !important;
+    text-align: left !important;
   }
 }
 
@@ -2173,24 +2186,27 @@ img {
   }
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 4.5rem !important;
-    font-size: 4.5rem !important;
+    height: 3.75rem !important;
+    font-size: 3.75rem !important;
+    text-align: left !important;
   }
 }
 
 @media screen and (max-width: 767px) {
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 3.25rem !important;
-    font-size: 3.25rem !important;
+    height: 2.85rem !important;
+    font-size: 2.85rem !important;
+    text-align: left !important;
   }
 }
 
 @media screen and (max-width: 479px) {
   .section-home-service .service-title-wrap,
   .section-home-service .service-title {
-    height: 2.25rem !important;
-    font-size: 2.25rem !important;
+    height: 2rem !important;
+    font-size: 2rem !important;
+    text-align: left !important;
   }
 }
 

@@ -303,7 +303,7 @@
 
 /* Bold Banner-Style Footer Brand Typography */
 .footer_brand {
-  letter-spacing: -0.05em;
+  letter-spacing: -0.01em;
   margin-right: auto;
   font-size: 20vw;
   font-weight: 800 !important;

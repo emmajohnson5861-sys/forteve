@@ -11,14 +11,16 @@ import { FaqSection } from '../components/sections/FaqSection';
 import { CtaSection } from '../components/sections/CtaSection';
 import { Footer } from '../components/common/Footer';
 import { Cursor } from '../components/common/Cursor';
+import { BackToTop } from '../components/common/BackToTop';
 import { SmoothScroll } from '../components/common/SmoothScroll';
 
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="page-wrapper min-h-screen bg-[#ffffff] text-[#ffffff]">
+      <div className="page-wrapper min-h-screen bg-[#f4f4f2] text-[#05080C]">
         <Cursor />
         <Header />
+        <BackToTop />
         <main id="main-content">
           <BannerSection />
           <AboutSection />

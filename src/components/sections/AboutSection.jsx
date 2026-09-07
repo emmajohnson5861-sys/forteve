@@ -15,38 +15,63 @@ if (typeof window !== 'undefined') {
 export const AboutSection = () => {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
+  const cardsRef = useRef(null);
+  const num1Ref = useRef(null);
+  const num2Ref = useRef(null);
+  const num3Ref = useRef(null);
 
   useGSAP(
     () => {
-      if (!textRef.current) return;
-      const pElement = textRef.current.querySelector('p');
-      if (!pElement) return;
+      // 1. Text scrub animation
+      if (textRef.current) {
+        const pElement = textRef.current.querySelector('p');
+        if (pElement) {
+          const split = new SplitType(pElement, {
+            types: 'words, chars',
+            tagName: 'span',
+          });
 
-      const split = new SplitType(pElement, {
-        types: 'words, chars',
-        tagName: 'span',
-      });
+          if (split.chars && split.chars.length > 0) {
+            gsap.set(split.chars, { opacity: 0.2 });
 
-      if (split.chars && split.chars.length > 0) {
-        gsap.set(split.chars, { opacity: 0.2 });
+            gsap.to(split.chars, {
+              opacity: 1,
+              duration: 0.01,
+              stagger: 0.02,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: textRef.current,
+                start: 'top 80%',
+                end: 'bottom 30%',
+                scrub: true,
+              },
+            });
+          }
+        }
+      }
 
-        gsap.to(split.chars, {
-          opacity: 1,
-          duration: 0.01,
-          stagger: 0.02,
-          ease: 'none',
+      // 2. Simultaneous Counter Animation for Stats Cards
+      if (cardsRef.current) {
+        const targets = { val1: 0, val2: 0, val3: 0 };
+
+        gsap.to(targets, {
+          val1: 10,
+          val2: 30,
+          val3: 500,
+          duration: 2.0,
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: textRef.current,
-            start: 'top 80%',
-            end: 'bottom 30%',
-            scrub: true,
+            trigger: cardsRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          onUpdate: () => {
+            if (num1Ref.current) num1Ref.current.innerText = Math.round(targets.val1);
+            if (num2Ref.current) num2Ref.current.innerText = Math.round(targets.val2);
+            if (num3Ref.current) num3Ref.current.innerText = Math.round(targets.val3);
           },
         });
       }
-
-      return () => {
-        if (split) split.revert();
-      };
     },
     { scope: sectionRef }
   );
@@ -73,7 +98,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Stats Cards Grid */}
-        <div className="sec-about__cards about-markeio_cards forteve-about__cards">
+        <div ref={cardsRef} className="sec-about__cards about-markeio_cards forteve-about__cards">
           
           {/* Card 1 */}
           <div className="content-card sec-about__card about-card about-card--mint forteve-about__card">
@@ -84,7 +109,7 @@ export const AboutSection = () => {
             </div>
             <div className="about-card_bottom">
               <div className="about-card_number">
-                10 <span className="about-card_plus">+</span>
+                <span ref={num1Ref}>0</span><span className="about-card_plus">+</span>
               </div>
               <div className="about-card_label">Years Experience</div>
             </div>
@@ -103,7 +128,7 @@ export const AboutSection = () => {
             </div>
             <div className="about-card_bottom">
               <div className="about-card_number">
-                30 <span className="about-card_plus">+</span>
+                <span ref={num2Ref}>0</span><span className="about-card_plus">+</span>
               </div>
               <div className="about-card_label">Growing Team</div>
             </div>
@@ -120,7 +145,7 @@ export const AboutSection = () => {
             </div>
             <div className="about-card_bottom">
               <div className="about-card_number">
-                500 <span className="about-card_plus">+</span>
+                <span ref={num3Ref}>0</span><span className="about-card_plus">+</span>
               </div>
               <div className="about-card_label">Successful Projects</div>
             </div>
