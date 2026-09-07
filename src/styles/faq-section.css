@@ -1,0 +1,215 @@
+/* === Cuberto FAQ Section Styles === */
+
+.cb-faq {
+  color: #05080C;
+  background: #F4F4F2;
+  padding: 10rem 0;
+}
+
+.cb-faq.-inverse {
+  color: #05080C;
+  background: #F4F4F2;
+  padding: 10rem 0;
+}
+
+.cb-faq h2, 
+.cb-faq-header h2 {
+  color: #05080C !important;
+}
+
+.cb-faq-container {
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .cb-faq-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 12rem;
+  }
+}
+
+.cb-faq-container.-lg {
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cb-faq-container.-lg {
+    padding: 0 12rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cb-faq-container.-lg {
+    padding: 0 20rem;
+  }
+}
+
+/* === cb-divider === */
+.cb-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+}
+
+.cb-divider:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -40px;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  cursor: pointer;
+}
+
+.cb-divider svg {
+  position: absolute;
+  top: -99px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  touch-action: none;
+  overflow: visible;
+}
+
+.cb-divider svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .cb-divider svg path {
+    shape-rendering: auto;
+  }
+}
+
+.cb-faq-item {
+  position: relative;
+  padding: 3.5rem 0;
+}
+
+.cb-faq-item-toggle {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: .02em;
+  list-style: none;
+  user-select: none;
+}
+
+.cb-faq-item-toggle::-webkit-details-marker {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cb-faq-item-toggle {
+    align-items: center;
+    font-size: 2.4rem;
+  }
+}
+
+.cb-faq-item-toggle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+[open] .cb-faq-item-toggle:before {
+  display: none;
+}
+
+.cb-faq-item-arr {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem 0 0 0;
+  flex-shrink: 0;
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .cb-faq-item-arr {
+    margin: 0;
+  }
+}
+
+.cb-faq-item-title {
+  color: #05080C !important;
+}
+
+[open] .cb-faq-item-arr {
+  color: #05080C !important;
+  transform: rotate(135deg);
+}
+
+.cb-faq-item-arr:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #05080C;
+}
+
+.cb-faq-item-arr:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  bottom: 0;
+  width: 2px;
+  background: #05080C;
+}
+
+.cb-faq-item-content {
+  overflow: hidden;
+}
+
+.cb-faq-item-text {
+  padding-top: 1.6rem;
+  color: rgba(5, 8, 12, 0.7) !important;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  .cb-faq-item-text {
+    padding-top: 3rem;
+    font-size: 1.8rem;
+  }
+}
+
+.cb-faq-item-text p:not(:first-child) {
+  margin-top: 1em;
+}
+
+/* === details animation === */
+details::details-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  align-items: start;
+  opacity: 0;
+  content-visibility: visible;
+  pointer-events: none;
+  transition: grid-template-rows .3s ease-out, opacity .4s ease-out, content-visibility .3s allow-discrete;
+}
+
+details[open]::details-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  pointer-events: auto;
+}

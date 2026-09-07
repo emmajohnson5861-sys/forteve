@@ -1,0 +1,189 @@
+@import "./styles/style.css";
+@import "./styles/forteve-banner.css";
+@import "./styles/forteve.shared.08906c3c1.css";
+@import "./styles/process-section.css";
+@import "./styles/faq-section.css";
+@import "./styles/showreel-section.css";
+@import "./styles/cta-section.css";
+@import "tailwindcss";
+
+:root {
+  /* Brand Fonts */
+  --font-family-primary: 'Mona Sans', system-ui, -apple-system, sans-serif;
+  --font-family-heading: 'Mona Sans Narrow', 'Mona Sans', system-ui, sans-serif;
+
+  /* Theme Tokens */
+  --forteve-primary: #0b0c10;
+  --forteve-accent: #6366F1;
+  --forteve-bg: #ffffff;
+  --forteve-surface: #181920;
+  --forteve-text: #ffffff;
+  --forteve-text-muted: #9CA3AF;
+  --forteve-border: rgba(255, 255, 255, 0.08);
+
+  --container-max-w: 1600px;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: #ffffff;
+  color: var(--forteve-text);
+  overflow-x: hidden;
+}
+
+/* Lenis Smooth Scroll CSS Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6, .header-title, .font-heading, .font-narrow {
+  font-family: var(--font-family-heading) !important;
+  font-stretch: condensed;
+  text-transform: uppercase !important;
+}
+
+/* Service Marquee Continuous Infinite Animation */
+@keyframes verticalMarqueeLoop {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.service-marquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: verticalMarqueeLoop 10s linear infinite;
+}
+
+/* Horizontal Subtitle Marquee Continuous Infinite Animation */
+@keyframes subtitleMarqueeLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.subtitle-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: subtitleMarqueeLoop 10s linear infinite;
+}
+
+/* Text & Icon Swipe Hover Animation (A-to-Z matching original Webflow template) */
+.nav-text-wrap .nav-text,
+.navigation-link-wrap .navigation-link-text,
+.main-button-block .button-text,
+.social-icon-wrap .social-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block;
+}
+
+.nav-link:hover .nav-text,
+.navigation-link:hover .navigation-link-text,
+.main-button:hover .button-text,
+.social-link:hover .social-icon {
+  transform: translateY(-100%) !important;
+}
+
+@layer components {
+  /* Site Layout Container Symmetry */
+  .site-container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    .site-container {
+      padding-inline: 30px;
+    }
+  }
+
+  @media (min-width: 1441px) {
+    .site-container {
+      max-width: 1600px;
+      padding-inline: 0;
+    }
+  }
+
+  /* Section Structural Layout */
+  .site-section {
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* Global 1600px Max-Width Override for All Sections & Containers */
+.container-large,
+.site-container,
+.sec-banner__container,
+.sec-about__container,
+.container-xlarge,
+.container-medium {
+  max-width: 1600px !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Unified Global Main Button Specification */
+.main-button,
+.main-button.alternate-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  padding: 1.25rem 2.25rem !important;
+  border-radius: 100px !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: max-content !important;
+  box-sizing: border-box !important;
+}
+
+.main-button-block {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  height: 1.15rem !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.button-text {
+  font-size: 1rem !important;
+  line-height: 1.15rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.button-icon {
+  height: 1.125rem !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+

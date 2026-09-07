@@ -1,0 +1,254 @@
+'use client';
+
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+
+export const Header = () => {
+  const [navOpen, setNavOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const drawerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleNav = () => {
+    setNavOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (!drawerRef.current) return;
+    const drawerEl = drawerRef.current;
+    const contentWrap = drawerEl.querySelector('.navigation-content-wrap');
+    const opacityBg = drawerEl.querySelector('.navigation-opacity');
+    const links = drawerEl.querySelectorAll('.navigation-link-block');
+
+    if (navOpen) {
+      gsap.set(drawerEl, { display: 'block' });
+      gsap.fromTo(opacityBg, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power2.out' });
+      gsap.fromTo(
+        contentWrap,
+        { scale: 0.15, opacity: 0, transformOrigin: '100% 100%' },
+        { scale: 1, opacity: 1, duration: 0.85, ease: 'power3.out' }
+      );
+      gsap.fromTo(
+        links,
+        { y: 35, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
+      );
+    } else {
+      gsap.to(opacityBg, { opacity: 0, duration: 0.35 });
+      gsap.to(contentWrap, {
+        scale: 0.15,
+        opacity: 0,
+        duration: 0.55,
+        ease: 'power3.inOut',
+        transformOrigin: '100% 100%',
+        onComplete: () => {
+          gsap.set(drawerEl, { display: 'none' });
+        },
+      });
+    }
+  }, [navOpen]);
+
+  return (
+    <div 
+      className={`navbar site-header sec-header w-nav ${navOpen ? 'w--nav-menu-open' : ''}`} 
+      data-animation="default" 
+      data-collapse="all" 
+      data-duration="0" 
+      data-easing="ease"
+      data-easing2="ease" 
+      data-wf--navbar--variant="base" 
+      id="top" 
+      role="banner"
+    >
+      <div className="container-large">
+        <div className="nav-content-wrapper sec-header__wrapper">
+          
+          {/* Logo */}
+          <div className="logo-wrapper sec-header__logo-wrapper" id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a9104a-13a91046">
+            <a aria-current="page" className="logo-link sec-header__logo-link w-inline-block w--current" href="#sec-banner">
+              <div className="logo-wrap">
+                <img 
+                  alt="Forteve Logo" 
+                  className="logo sec-header__logo-img" 
+                  loading="eager" 
+                  src="/assets/logo.png" 
+                />
+                <img 
+                  alt="Forteve Logo" 
+                  className="logo sec-header__logo-img" 
+                  loading="eager" 
+                  src="/assets/logo.png" 
+                />
+              </div>
+            </a>
+            <div className="logo-text-block"></div>
+          </div>
+
+          {/* Webflow Overlay Navigation Drawer */}
+          <nav 
+            ref={drawerRef}
+            className={`navigation sec-header__nav-drawer w-nav-menu ${navOpen ? 'w--nav-menu-open' : ''}`} 
+            role="navigation"
+            style={{ display: 'none' }}
+          >
+            <div className="navigation-container">
+              <div className="navigation-content-wrap" id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a91055-13a91046">
+                <div className="navigation-content-block">
+                  <div className="navigation-content">
+                    <div className="w-layout-grid navigation-inner-grid">
+                      <div className="navigation-content-list">
+                        
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block w--current" href="#sec-banner" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">Home</div>
+                              <div className="navigation-link-text">Home</div>
+                            </div>
+                            <div className="navigation-number">(01)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-about" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">About</div>
+                              <div className="navigation-link-text">About</div>
+                            </div>
+                            <div className="navigation-number">(02)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-projects" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">Projects</div>
+                              <div className="navigation-link-text">Projects</div>
+                            </div>
+                            <div className="navigation-number">(03)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-services" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">Services</div>
+                              <div className="navigation-link-text">Services</div>
+                            </div>
+                            <div className="navigation-number">(04)</div>
+                          </a>
+                        </div>
+
+                        <div className="navigation-link-block">
+                          <a className="navigation-link w-inline-block" href="#sec-contact" onClick={() => setNavOpen(false)}>
+                            <div className="navigation-link-wrap">
+                              <div className="navigation-link-text">Contact</div>
+                              <div className="navigation-link-text">Contact</div>
+                            </div>
+                            <div className="navigation-number">(05)</div>
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div className="navigation-button-wrap" id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a91087-13a91046">
+                        <div className="navigation-button-block">
+                          <a className="main-button btn-primary sec-header__btn w-inline-block" href="#sec-contact" onClick={() => setNavOpen(false)}>
+                            <div className="main-button-block">
+                              <div className="button-text">Get in Touch</div>
+                              <div className="button-text">Get in Touch</div>
+                            </div>
+                            <img 
+                              alt="Star Icon" 
+                              className="button-icon" 
+                              loading="lazy" 
+                              src="/assets/68f287b26ff74f4a3003bac1_white-star-icon.svg" 
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div className="navigation-background"></div>
+                </div>
+              </div>
+              <div className="navigation-opacity" onClick={() => setNavOpen(false)}></div>
+            </div>
+          </nav>
+
+          {/* Quick Nav Bar */}
+          <div className="nav-wrapper sec-header__nav-wrapper">
+            <div className="nav-link-block">
+              <a className="nav-link w-inline-block w--current" href="#sec-banner">
+                <div className="nav-text-wrap">
+                  <div className="nav-text">Home</div>
+                  <div className="nav-text">Home</div>
+                </div>
+              </a>
+              <a className="nav-link w-inline-block" href="#sec-about">
+                <div className="nav-text-wrap">
+                  <div className="nav-text">Studio</div>
+                  <div className="nav-text">Studio</div>
+                </div>
+              </a>
+              <a className="nav-link w-inline-block" href="#sec-projects">
+                <div className="nav-text-wrap">
+                  <div className="nav-text">Projects</div>
+                  <div className="nav-text">Projects</div>
+                </div>
+              </a>
+              <a className="nav-link w-inline-block" href="#sec-contact">
+                <div className="nav-text-wrap">
+                  <div className="nav-text">Contact</div>
+                  <div className="nav-text">Contact</div>
+                </div>
+              </a>
+            </div>
+
+            {/* Hamburger Toggle Button */}
+            <div 
+              className={`menu-button sec-header__menu-btn w-nav-button ${navOpen ? 'w--open' : ''}`}
+              id="w-node-_775fe0a9-7eeb-54f2-c56b-580613a910ac-13a91046"
+              onClick={toggleNav}
+              role="button"
+              aria-label="Toggle navigation menu"
+              tabIndex={0}
+            >
+              <div className="menu-button-container">
+                <div className="menu-button-block">
+                  <div className="menu-button-wrap">
+                    <div className="menu-line-item">
+                      <div className={`menu-line top ${navOpen ? 'open' : ''}`}></div>
+                    </div>
+                    <div className="menu-line-item">
+                      <div className={`menu-line bottom ${navOpen ? 'open' : ''}`}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sticky Nav Background Pill (Appears on Scroll) */}
+          <div 
+            className="nav-background" 
+            style={{ 
+              opacity: isScrolled ? 1 : 0, 
+              transition: 'opacity 0.35s ease, background-color 0.35s ease',
+              pointerEvents: 'none' 
+            }}
+          ></div>
+
+        </div>
+      </div>
+    </div>
+  );
+};

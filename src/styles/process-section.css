@@ -1,0 +1,258 @@
+/* Process Section Styling */
+.step-process-section {
+  position: relative;
+  background: #F4F4F2;
+  color: #05080C;
+  width: 100%;
+  padding: 150px 0 120px;
+  overflow: visible;
+}
+
+.step-container {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.step-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Pre-Title Subtitle Badge */
+.pre-title-wrap {
+  position: sticky;
+  top: 150px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.step-process-section .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #05080C;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.step-process-section .badge .star-icon {
+  width: 16px;
+  height: 16px;
+  fill: #05080C;
+}
+
+/* 3-Column Step Content Layout */
+.step-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+/* Sticky Headings (Left & Right) */
+.title-column {
+  position: sticky;
+  top: 350px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: min-content;
+  white-space: nowrap;
+  padding-bottom: 200px;
+  will-change: transform;
+  overflow: visible;
+}
+
+.title-left {
+  align-items: flex-end;
+  text-align: right;
+  transform: translateX(235px);
+}
+
+.title-right {
+  align-items: flex-start;
+  text-align: left;
+  transform: translateX(-235px);
+}
+
+.heading-text {
+  font-size: clamp(32px, 4.2vw, 54px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #05080C;
+  margin: 0;
+}
+
+.brand-script {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.18em;
+  margin-right: 0.12em;
+}
+
+/* Middle Column: Cards Column */
+.cards-column {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 440px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* Top Empty Space in Cards Column */
+.cards-empty-space {
+  width: 100%;
+  height: 730px;
+  flex-shrink: 0;
+}
+
+/* Process Card Outer Frame */
+.process-card {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 10px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Process Card Inner Border Box */
+.process-card-inner {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Head */
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0A0A0C;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.card-count-icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.step-num {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #0A0A0C;
+  opacity: 0.45;
+  letter-spacing: -0.02em;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Illustration Container */
+.card-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  min-height: 280px;
+  width: 100%;
+}
+
+.card-illustration img,
+.card-illustration svg,
+.card-illustration dotlottie-player {
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.process-card:hover .card-illustration img,
+.process-card:hover .card-illustration svg,
+.process-card:hover .card-illustration dotlottie-player {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* Card Description */
+.card-desc {
+  margin: 0;
+  color: #55555E;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  font-weight: 450;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .step-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-column {
+    position: static;
+    transform: none !important;
+    padding-bottom: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-left,
+  .title-right {
+    align-items: center;
+  }
+
+  .cards-empty-space {
+    height: 40px;
+  }
+}

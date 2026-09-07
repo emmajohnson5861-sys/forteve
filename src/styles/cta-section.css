@@ -1,0 +1,289 @@
+/* CTA Section Styles - Original Webflow Glassmorphism Theme */
+
+.section_cta {
+  position: relative;
+  width: 100%;
+  background-color: #F4F4F2 !important;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.padding-global.is-tiny {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+.cta_component {
+  border-radius: 1.5rem !important;
+  background-color: #0b0c10 !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/showreel.png') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+.cta_content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1366px !important;
+  margin: 0 auto;
+  align-items: center !important;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.cta_left_column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.heading-style-h1 {
+  font-size: 4vw !important;
+  line-height: 1.2 !important;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: var(--font-family-heading, 'Mona Sans Narrow', sans-serif);
+}
+
+.cta-description {
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  max-width: 90%;
+  line-height: 1.5;
+}
+
+.spacer-large {
+  height: 2.5rem;
+}
+
+.fade-in-left {
+  width: max-content !important;
+  justify-content: flex-start !important;
+  width: 100%;
+}
+
+.cta_right_column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Original Webflow Translucent Glassmorphism Form Container */
+.glass-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 1.5rem !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  width: 100%;
+  padding: 1px;
+}
+
+.glass-filter,
+.glass-overlay,
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glass-filter {
+  z-index: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  filter: saturate(120%) brightness(1.15);
+}
+
+.glass-overlay {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.glass-specular {
+  z-index: 2;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem !important;
+  width: 100%;
+}
+
+.cta_form {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 0 !important;
+}
+
+.form_row.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form_group label {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Original Pill Form Inputs & Textarea */
+.form_group input,
+.form_group textarea {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 0.875rem !important;
+  padding-bottom: 0.875rem !important;
+  font-family: inherit;
+  font-size: 0.95rem !important;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form_group textarea {
+  border-radius: 20px !important;
+  padding-top: 1rem !important;
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  outline: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Glassmorphism Pill Buttons for Services */
+.service-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.service-pill-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 0.875rem !important;
+  padding-bottom: 0.875rem !important;
+  min-height: 3rem !important;
+  border-radius: 30px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box !important;
+}
+
+.service-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.service-pill-btn.active {
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  color: #0b0c10 !important;
+  font-weight: 600;
+}
+
+.form_disclaimer {
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin: 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+  .cta_content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .heading-style-h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-style-h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .form_row.two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-content {
+    padding: 1.5rem !important;
+  }
+
+  .cta_note {
+    top: 1.5rem;
+  }
+}
