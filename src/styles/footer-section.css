@@ -65,7 +65,7 @@
 
 .footer_link-label {
   color: #000000;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   text-transform: none !important;
 }
@@ -99,6 +99,36 @@
 
 .footer_link:hover {
   color: #000000 !important;
+}
+
+/* Footer Link Text Swipe Up Animation (Matching Header Menu) */
+.footer_link.nav-link,
+.footer_template-link.nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.footer_link .nav-text-wrap,
+.footer_template-link .nav-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 1.15rem !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.footer_link .nav-text,
+.footer_template-link .nav-text {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block !important;
+  line-height: 1.15rem !important;
+}
+
+.footer_link:hover .nav-text,
+.footer_template-link:hover .nav-text {
+  transform: translateY(-100%) !important;
 }
 
 .footer_secondary {
@@ -140,7 +170,7 @@
 
 .field-label {
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 10px;
   color: #000000;
   text-transform: none !important;
@@ -177,30 +207,29 @@
   color: #707070 !important;
 }
 
-.footer_newsletter-button {
-  z-index: 2;
+/* Dark CTA-Style Newsletter Submit Button */
+.main-button.footer-submit-btn {
+  background-color: #0b0c10 !important;
   color: #ffffff !important;
-  text-align: center;
-  background-color: #242424 !important;
-  background-image: linear-gradient(#242424, #131313) !important;
-  border-radius: 1rem !important;
-  justify-content: center;
-  align-items: center;
-  padding: 0.75rem 1.5rem !important;
-  font-size: 0.875rem !important;
-  font-weight: 500;
-  line-height: 1.5;
-  transition: background-image 0.2s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 22px 33px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.12);
-  cursor: pointer;
+  border-radius: 100px !important;
+  padding: 1.25rem 2.25rem !important;
+  transition: background-color 0.35s ease, transform 0.35s ease !important;
   border: none !important;
-  text-transform: none !important;
+  cursor: pointer;
+  height: 4rem !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
-.footer_newsletter-button:hover {
-  background-image: linear-gradient(#333, #141414) !important;
+.main-button.footer-submit-btn:hover {
+  background-color: #1c1e26 !important;
+}
+
+.main-button.footer-submit-btn .button-text {
+  color: #ffffff !important;
+}
+
+.main-button.footer-submit-btn .button-icon {
+  filter: none !important;
 }
 
 .footer_legal-links {
@@ -251,11 +280,12 @@
   color: #000000 !important;
 }
 
+/* Bold Banner-Style Footer Brand Typography */
 .footer_brand {
   letter-spacing: -0.05em;
   margin-right: auto;
   font-size: 20vw;
-  font-weight: 500;
+  font-weight: 800 !important;
   line-height: 1;
   color: #000000;
   font-family: var(--font-family-heading, 'Mona Sans Narrow', sans-serif);
@@ -265,7 +295,7 @@
 
 .footer_mark {
   font-size: 10vw;
-  font-weight: 600;
+  font-weight: 800;
   vertical-align: super;
 }
 
@@ -341,13 +371,6 @@
   .footer_link {
     font-size: 0.75rem !important;
   }
-
-  .footer_newsletter-button {
-    border-radius: 0.75rem !important;
-    padding-top: 0.875rem !important;
-    padding-bottom: 0.875rem !important;
-    font-size: 0.875rem !important;
-  }
 }
 
 @media screen and (max-width: 479px) {
@@ -383,5 +406,10 @@
     grid-column-gap: 0.875rem;
     grid-row-gap: 0.875rem;
     flex-flow: column;
+  }
+
+  .main-button.footer-submit-btn {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }

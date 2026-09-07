@@ -30,26 +30,74 @@ export const Footer = () => {
                 >
                   <div className="footer_link-label">Services & Contact</div>
                   <div className="footer_lists">
+                    
+                    {/* List 1 */}
                     <div className="footer_links-list">
-                      <a href="https://forteve.com/ui-ux-design-and-development/" className="footer_link">UI/UX Design</a>
-                      <a href="https://forteve.com/web-app-development/" className="footer_link">Web Development</a>
-                      <a href="https://forteve.com/mobile-app-development/" className="footer_link">Mobile Application</a>
+                      <a href="https://forteve.com/ui-ux-design-and-development/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">UI/UX Design</div>
+                          <div className="nav-text">UI/UX Design</div>
+                        </div>
+                      </a>
+                      <a href="https://forteve.com/web-app-development/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">Web Development</div>
+                          <div className="nav-text">Web Development</div>
+                        </div>
+                      </a>
+                      <a href="https://forteve.com/mobile-app-development/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">Mobile Application</div>
+                          <div className="nav-text">Mobile Application</div>
+                        </div>
+                      </a>
                     </div>
+
+                    {/* List 2 */}
                     <div className="footer_links-list">
-                      <a href="https://forteve.com/search-engine-optimization-services/" className="footer_link">SEO</a>
-                      <a href="https://forteve.com/custom-software-development-services/" className="footer_link">Custom Software</a>
-                      <a href="https://sessionbird.com/" className="footer_link">Session Bird</a>
+                      <a href="https://forteve.com/search-engine-optimization-services/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">SEO</div>
+                          <div className="nav-text">SEO</div>
+                        </div>
+                      </a>
+                      <a href="https://forteve.com/custom-software-development-services/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">Custom Software</div>
+                          <div className="nav-text">Custom Software</div>
+                        </div>
+                      </a>
+                      <a href="https://sessionbird.com/" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">Session Bird</div>
+                          <div className="nav-text">Session Bird</div>
+                        </div>
+                      </a>
                     </div>
+
+                    {/* List 3 */}
                     <div className="footer_links-list">
                       <div className="footer_link">Call Us: +92 323 3678383</div>
-                      <a href="mailto:Info@forteve.com" className="footer_link">Info@forteve.com</a>
+                      <a href="mailto:Info@forteve.com" className="footer_link nav-link">
+                        <div className="nav-text-wrap">
+                          <div className="nav-text">Info@forteve.com</div>
+                          <div className="nav-text">Info@forteve.com</div>
+                        </div>
+                      </a>
                     </div>
+
+                    {/* List 4 */}
                     <div className="footer_links-list">
-                      <div className="footer_link" style={{ whiteSpace: 'normal', lineHeight: 1.5, textTransform: 'none' }}>84j Ghazali Rd, P.E.C.H.S Block 2, Karachi</div>
+                      <div className="footer_link" style={{ whiteSpace: 'normal', lineHeight: 1.5, textTransform: 'none' }}>
+                        84j Ghazali Rd, P.E.C.H.S Block 2, Karachi
+                      </div>
                     </div>
+
                   </div>
                 </div>
               </div>
+
+              {/* Secondary Column: Social Links & Newsletter */}
               <div className="footer_secondary">
                 <div className="footer_social">
                   <a
@@ -92,6 +140,8 @@ export const Footer = () => {
                     />
                   </a>
                 </div>
+
+                {/* Newsletter Form */}
                 <div className="footer_newsletter w-form">
                   <form
                     id="wf-form-Newsletter-form"
@@ -114,11 +164,22 @@ export const Footer = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                       />
-                      <input
+                      <button
                         type="submit"
-                        className="footer_newsletter-button w-button"
-                        value="Subscribe"
-                      />
+                        className="main-button footer-submit-btn w-inline-block"
+                        style={{ border: 'none', cursor: 'pointer' }}
+                      >
+                        <div className="main-button-block">
+                          <div className="button-text">Subscribe</div>
+                          <div className="button-text">Subscribe</div>
+                        </div>
+                        <img
+                          loading="lazy"
+                          src="/assets/68f287b26ff74f4a3003bac1_white-star-icon.svg"
+                          alt="Star Icon"
+                          className="button-icon"
+                        />
+                      </button>
                     </div>
                   </form>
                   {submitted && (
@@ -129,6 +190,8 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
+
+            {/* Legal Links Bar */}
             <div className="footer_legal-links">
               <div
                 id="w-node-_49f89e0f-c321-7bff-a29b-8acdeddf7dfe-eddf7dc2"
@@ -140,18 +203,29 @@ export const Footer = () => {
                 id="w-node-_49f89e0f-c321-7bff-a29b-8acdeddf7e0b-eddf7dc2"
                 className="footer_template-links"
               >
-                <a href="https://forteve.com/terms-and-condition/" className="footer_template-link">
-                  Terms And Condition
+                <a href="https://forteve.com/terms-and-condition/" className="footer_template-link nav-link">
+                  <div className="nav-text-wrap">
+                    <div className="nav-text">Terms And Condition</div>
+                    <div className="nav-text">Terms And Condition</div>
+                  </div>
                 </a>
-                <a href="https://forteve.com/privacy-policy/" className="footer_template-link">
-                  Privacy Policy
+                <a href="https://forteve.com/privacy-policy/" className="footer_template-link nav-link">
+                  <div className="nav-text-wrap">
+                    <div className="nav-text">Privacy Policy</div>
+                    <div className="nav-text">Privacy Policy</div>
+                  </div>
                 </a>
-                <a href="https://forteve.com/randomcom" className="footer_template-link">
-                  random
+                <a href="https://forteve.com/randomcom" className="footer_template-link nav-link">
+                  <div className="nav-text-wrap">
+                    <div className="nav-text">random</div>
+                    <div className="nav-text">random</div>
+                  </div>
                 </a>
               </div>
             </div>
           </div>
+
+          {/* Large Bold Brand Title */}
           <div className="footer_brand">
             Forteve<span className="footer_mark">®</span>
           </div>
