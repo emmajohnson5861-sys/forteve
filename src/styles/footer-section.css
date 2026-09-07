@@ -94,6 +94,11 @@
   font-size: 0.875rem !important;
   font-weight: 500;
   text-transform: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
   transition: color 0.2s ease;
 }
 
@@ -101,29 +106,36 @@
   color: #000000 !important;
 }
 
-/* Footer Link Text Swipe Up Animation (Matching Header Menu) */
+/* Footer Link Text Swipe Up Animation (Clean & Lightweight, No BG/Padding) */
 .footer_link.nav-link,
 .footer_template-link.nav-link {
   display: inline-flex !important;
   align-items: center !important;
   overflow: hidden !important;
   text-decoration: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .footer_link .nav-text-wrap,
 .footer_template-link .nav-text-wrap {
   display: flex !important;
   flex-direction: column !important;
-  height: 1.15rem !important;
+  height: 1.25em !important;
   overflow: hidden !important;
   position: relative !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .footer_link .nav-text,
 .footer_template-link .nav-text {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   display: block !important;
-  line-height: 1.15rem !important;
+  line-height: 1.25em !important;
+  white-space: nowrap !important;
 }
 
 .footer_link:hover .nav-text,
