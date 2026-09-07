@@ -90,7 +90,7 @@
 }
 
 .footer_link {
-  color: #474747 !important;
+  color: #101010 !important;
   font-size: 0.875rem !important;
   font-weight: 500;
   text-transform: none !important;
@@ -99,14 +99,15 @@
   margin: 0 !important;
   border: none !important;
   box-shadow: none !important;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .footer_link:hover {
   color: #000000 !important;
+  opacity: 0.7;
 }
 
-/* Footer Link Text Swipe Up Animation (Clean & Lightweight, No BG/Padding) */
+/* Footer Link Text Swipe Up Animation (Clean & Lightweight, Dark Color) */
 .footer_link.nav-link,
 .footer_template-link.nav-link {
   display: inline-flex !important;
@@ -116,6 +117,7 @@
   background: transparent !important;
   padding: 0 !important;
   margin: 0 !important;
+  color: #101010 !important;
 }
 
 .footer_link .nav-text-wrap,
@@ -136,6 +138,7 @@
   display: block !important;
   line-height: 1.25em !important;
   white-space: nowrap !important;
+  color: #101010 !important;
 }
 
 .footer_link:hover .nav-text,
@@ -281,10 +284,10 @@
 }
 
 .footer_template-link {
-  color: #6b6b6b !important;
+  color: #101010 !important;
   font-size: 0.75rem !important;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
   text-transform: none !important;
 }
 
