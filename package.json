@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "push": "git add . && git commit -m \"Update code\" && git push origin main"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
