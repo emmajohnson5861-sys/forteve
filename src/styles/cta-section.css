@@ -60,7 +60,7 @@
   display: grid !important;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  max-width: 1366px !important;
+  max-width: 1600px !important;
   margin: 0 auto;
   align-items: center !important;
   width: 100%;

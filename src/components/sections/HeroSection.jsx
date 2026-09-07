@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Sparkles, Code2, Cpu, Rocket } from 'lucide-react';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -15,6 +16,11 @@ export const HeroSection = () => {
     // Respect reduced-motion preference
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    const titleEl = containerRef.current?.querySelector('.sec-hero__title');
+    if (titleEl) {
+      initTitleAnimation(titleEl, { start: 'top 90%', stagger: 0.02 });
+    }
+
     const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     timeline
@@ -23,11 +29,6 @@ export const HeroSection = () => {
         opacity: 0,
         duration: 0.6,
       })
-      .from('.sec-hero__title', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-      }, '-=0.3')
       .from('.sec-hero__desc', {
         y: 20,
         opacity: 0,

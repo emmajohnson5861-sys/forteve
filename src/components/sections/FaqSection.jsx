@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -142,12 +143,24 @@ function FaqDivider() {
 }
 
 export function FaqSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const titleEl = sectionRef.current.querySelector('.sec-faq__title');
+    if (titleEl) {
+      initTitleAnimation(titleEl, { start: 'top 85%', stagger: 0.02 });
+    }
+  }, []);
+
   return (
-    <section className="cb-faq" id="faq">
-      <div className="cb-faq-container -lg">
-        <div className="cb-faq-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem', marginBottom: '2.5rem' }}>
-          <SubtitleMarquee text="Frequently Asked Questions — " />
-          <h2 className="heading-style-h2">
+    <section ref={sectionRef} className="site-section sec-faq cb-faq" id="sec-faq">
+      <div className="site-container sec-faq__container cb-faq-container -lg">
+        <div className="section-header sec-faq__header cb-faq-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem', marginBottom: '2.5rem' }}>
+          <div className="section-badge sec-faq__badge">
+            <SubtitleMarquee text="Frequently Asked Questions — " />
+          </div>
+          <h2 className="heading-style-h2 section-title sec-faq__title">
             Frequently Ask <br />
             <span className="text-color-secondary">Question</span>
           </h2>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 const servicesData = [
   {
@@ -99,6 +100,11 @@ export const ServicesSection = () => {
 
   useGSAP(() => {
     if (!containerRef.current) return;
+
+    const mainTitle = containerRef.current.querySelector('.sec-services__title');
+    if (mainTitle) {
+      initTitleAnimation(mainTitle, { start: 'top 85%', stagger: 0.02 });
+    }
 
     // 2. Service Cards Interactions with Letter-by-Letter Stagger & 3D Mouse Follow
     const serviceGrids = containerRef.current.querySelectorAll('.service-content-grid');
@@ -246,11 +252,13 @@ export const ServicesSection = () => {
         <div className="container-large">
           <div className="padding-section-large">
             {/* Top Header Grid */}
-            <div className="w-layout-grid top-grid">
+            <div className="section-header sec-services__header w-layout-grid top-grid">
               <div className="max-width-large">
-                <SubtitleMarquee text="Our Services — " />
+                <div className="section-badge sec-services__badge">
+                  <SubtitleMarquee text="Our Services — " />
+                </div>
 
-                <h2 className="heading-style-h2 text-color-alternate">
+                <h2 className="heading-style-h2 section-title sec-services__title text-color-alternate">
                   Creative <span className="text-color-secondary">Solutions</span>
                 </h2>
               </div>

@@ -102,18 +102,20 @@ export function ProcessSection() {
         strategy="afterInteractive"
       />
 
-      <section className="step-process-section" id="stepSection" ref={sectionRef}>
-        <div className="step-container">
+      <section className="site-section sec-process step-process-section" id="sec-process" ref={sectionRef}>
+        <div className="site-container sec-process__container step-container">
           <div className="step-wrap">
             {/* Pre-Title Sticky Badge */}
-            <div className="step-header" style={{ marginBottom: '2.5rem' }}>
-              <SubtitleMarquee text="Our Process — " />
+            <div className="section-header sec-process__header step-header" style={{ marginBottom: '2.5rem' }}>
+              <div className="section-badge sec-process__badge">
+                <SubtitleMarquee text="From Concept to Launch — " />
+              </div>
             </div>
 
             {/* 3-Column Step Content Layout */}
             <div className="step-content">
               {/* Left Column Sticky Title */}
-              <div className="title-column title-left" id="titleLeft" ref={titleLeftRef}>
+              <div className="section-title sec-process__title title-column title-left" id="titleLeft" ref={titleLeftRef}>
                 <h3 className="heading-text">Your ideas</h3>
                 <h3 className="heading-text">
                   into <span className="brand-script">Brand</span>

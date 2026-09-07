@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -33,6 +34,11 @@ export function CtaSection() {
   // Attach exact GSAP hover & parallax scroll animation to CTA section
   useGSAP(() => {
     if (!containerRef.current) return;
+
+    const titleEl = containerRef.current.querySelector('.sec-cta__title');
+    if (titleEl) {
+      initTitleAnimation(titleEl, { start: 'top 85%', stagger: 0.02 });
+    }
 
     // Smooth parallax scroll effect on background image
     if (bgImgRef.current) {
@@ -109,7 +115,7 @@ export function CtaSection() {
   };
 
   return (
-    <section ref={containerRef} className="section_cta" id="contact-cta">
+    <section ref={containerRef} className="site-section sec-cta section_cta" id="sec-cta">
       <div className="padding-global is-tiny">
         <div className="cta_component">
           {/* Background image with vertical parallax scroll effect */}
@@ -124,19 +130,19 @@ export function CtaSection() {
           </div>
 
           <div className="padding-section-medium" style={{ paddingTop: '2rem' }}></div>
-          <div className="padding-global">
-            <div className="cta_content">
-              {/* Left Column */}
-              <div className="cta_left_column">
-                <div style={{ marginBottom: '1.5rem' }}>
+          <div className="padding-global" style={{ width: '100%' }}>
+            <div className="site-container sec-cta__container cta_content">
+              {/* Left Column Header */}
+              <div className="section-header sec-cta__header cta_left_column">
+                <div className="section-badge sec-cta__badge" style={{ marginBottom: '1.5rem' }}>
                   <SubtitleMarquee text="Get Started — " variant="light" />
                 </div>
                 <div className="text-align-left">
                   <div className="text-color-white">
-                    <h2 className="heading-style-h1 font-weight-medium">
+                    <h2 className="heading-style-h1 font-weight-medium section-title sec-cta__title">
                       Start your project with Forteve®
                     </h2>
-                    <p className="cta-description">
+                    <p className="section-description sec-cta__desc cta-description">
                       Let us collaborate to build something extraordinary and elevate your brand to the next level.
                     </p>
                   </div>

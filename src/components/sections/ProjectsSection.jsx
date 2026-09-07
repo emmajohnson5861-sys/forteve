@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -61,6 +62,11 @@ export function ProjectsSection() {
 
   useGSAP(() => {
     if (!containerRef.current) return;
+
+    const mainTitle = containerRef.current.querySelector('.sec-projects__title');
+    if (mainTitle) {
+      initTitleAnimation(mainTitle, { start: 'top 85%', stagger: 0.02 });
+    }
 
     // Button swipe hover animation
     const buttons = containerRef.current.querySelectorAll('.main-button');
@@ -131,20 +137,20 @@ export function ProjectsSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="projects" className="projects-section">
-      <div className="projects-container">
+    <section ref={containerRef} id="sec-projects" className="site-section sec-projects projects-section">
+      <div className="site-container sec-projects__container projects-container">
         <div className="projects-grid">
           {/* Left Column: Sticky Title & Description */}
-          <div className="projects-static-col">
+          <div className="section-header sec-projects__header projects-static-col">
             <div className="projects-static-inner">
-              <div style={{ marginBottom: '1rem' }}>
+              <div className="section-badge sec-projects__badge" style={{ marginBottom: '1rem' }}>
                 <SubtitleMarquee text="Featured Projects — " variant="dark" />
               </div>
-              <h2 className="heading-style-h2 projects-title">
+              <h2 className="heading-style-h2 section-title sec-projects__title projects-title">
                 Featured <br />
                 <span className="text-color-secondary">Projects</span>
               </h2>
-              <p className="projects-descr">
+              <p className="section-description sec-projects__desc projects-descr">
                 Explore our portfolio of digital products, software solutions, and technology experiences built by Forteve.
               </p>
               <div className="projects-btn-wrap">

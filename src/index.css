@@ -375,13 +375,25 @@ h1, h2, h3, h4, h5, h6, .header-title, .font-heading, .font-narrow {
   transform: translateY(-100%) !important;
 }
 
-@media (max-width: 768px) {
-  .back-to-top-btn {
-    bottom: 1.5rem !important;
-    right: 1.5rem !important;
-    width: 2.85rem !important;
-    height: 2.85rem !important;
-  }
+
+/* Hero Banner Entrance Animation Initial Hidden State (Prevents FOUC) */
+.sec-banner__video-wrap,
+.sec-banner__symbol,
+.social-link-1,
+.social-link-2,
+.service-marquee-component,
+.social-link-3,
+.social-link-4,
+.sec-header__logo-wrapper,
+.nav-link,
+.sec-header__menu-btn {
+  opacity: 0;
 }
+
+.sec-banner__title,
+.sec-banner__desc {
+  visibility: hidden;
+}
+
 
 

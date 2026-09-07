@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,6 +45,11 @@ export function TestimonialsSection() {
     const el = containerRef.current;
     if (!el) return;
 
+    const titleEl = el.closest('.sec-testimonials')?.querySelector('.sec-testimonials__title');
+    if (titleEl) {
+      initTitleAnimation(titleEl, { start: 'top 85%', stagger: 0.02 });
+    }
+
     const st = ScrollTrigger.create({
       trigger: el,
       start: 'top 70%',
@@ -58,11 +64,13 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="cb-summary" id="clients">
-      <div className="cb-summary-container -lg">
-        <div className="cb-summary-header">
-          <SubtitleMarquee text="Our Testimonials — " variant="dark" />
-          <h2 className="heading-style-h2" style={{ color: '#05080C', textAlign: 'left', marginTop: '1rem' }}>
+    <section className="site-section sec-testimonials cb-summary" id="sec-testimonials">
+      <div className="site-container sec-testimonials__container cb-summary-container -lg">
+        <div className="section-header sec-testimonials__header cb-summary-header">
+          <div className="section-badge sec-testimonials__badge">
+            <SubtitleMarquee text="Our Testimonials — " variant="dark" />
+          </div>
+          <h2 className="heading-style-h2 section-title sec-testimonials__title" style={{ color: '#05080C', textAlign: 'left', marginTop: '1rem' }}>
             Trusted By <br />
             <span className="text-color-secondary">Our Clients</span>
           </h2>

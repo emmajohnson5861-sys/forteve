@@ -96,7 +96,7 @@ export function ShowreelSection() {
 
   return (
     <>
-      <section className="section_showreel" id="showreel">
+      <section className="site-section sec-showreel section_showreel" id="sec-showreel">
         <div ref={wrapRef} className="showreel_wrap">
           <div ref={stickyRef} className="showreel_sticky">
             <div

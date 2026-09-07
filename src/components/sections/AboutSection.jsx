@@ -85,12 +85,11 @@ export const AboutSection = () => {
       <div className="site-container container-large sec-about__container forteve-about__container">
         
         {/* Top Header Block */}
-        <div className="about-markeio_top sec-about__top forteve-about__top">
-          <SubtitleMarquee 
-            text="About Forteve — " 
-            className="sec-about__badge forteve-about__badge" 
-          />
-          <div className="sec-about__content about-markeio_content scrub_letter forteve-about__content" ref={textRef}>
+        <div className="section-header sec-about__header about-markeio_top forteve-about__top">
+          <div className="section-badge sec-about__badge forteve-about__badge">
+            <SubtitleMarquee text="About Forteve — " />
+          </div>
+          <div className="section-description sec-about__desc sec-about__content about-markeio_content scrub_letter forteve-about__content" ref={textRef}>
             <p>
               At Forteve, we believe marketing isn't about selling it's about connecting. We're a full-service marketing agency built to help brands grow with purpose and data-driven precision. From crafting compelling stories to executing campaigns that convert, we blend strategy to turn attention into action.
             </p>

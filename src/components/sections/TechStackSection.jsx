@@ -5,6 +5,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SubtitleMarquee } from '../common/SubtitleMarquee';
+import { initTitleAnimation } from '../../utils/titleAnimation';
 
 const techRowsData = [
   // Row 1: Frontend & Core Frameworks (12 icons)
@@ -60,6 +61,11 @@ export function TechStackSection() {
   useGSAP(
     () => {
       if (!sectionRef.current) return;
+
+      const mainTitle = sectionRef.current.querySelector('.sec-tools__title');
+      if (mainTitle) {
+        initTitleAnimation(mainTitle, { start: 'top 85%', stagger: 0.02 });
+      }
 
       const buttons = sectionRef.current.querySelectorAll('.main-button');
       buttons.forEach((btn) => {
@@ -222,12 +228,14 @@ export function TechStackSection() {
   }, []);
 
   return (
-    <section className="tools-section" id="toolsSection" ref={sectionRef}>
-      <div className="tools-container">
+    <section className="site-section sec-tools tools-section" id="sec-tools" ref={sectionRef}>
+      <div className="site-container sec-tools__container tools-container">
         {/* Header matching FAQ & Services title style */}
-        <div className="tools-header">
-          <SubtitleMarquee text="Tech Stack & Tools — " variant="dark" />
-          <h2 className="heading-style-h2" style={{ color: '#05080C' }}>
+        <div className="section-header sec-tools__header tools-header">
+          <div className="section-badge sec-tools__badge">
+            <SubtitleMarquee text="Tech Stack & Tools — " variant="dark" />
+          </div>
+          <h2 className="heading-style-h2 section-title sec-tools__title" style={{ color: '#05080C' }}>
             Our Tech <br />
             <span className="text-color-secondary">Stack</span>
           </h2>
@@ -250,7 +258,7 @@ export function TechStackSection() {
         </div>
 
         <div className="tools-footer">
-          <p className="tools-desc">
+          <p className="section-description sec-tools__desc tools-desc">
             We design products that live in the digital world: intuitive UX, sharp UI, immersive 3D and
             motion. From research to launch, we craft bold, seamless experiences.
           </p>
