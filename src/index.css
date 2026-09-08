@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5, h6, .header-title, .font-heading, .font-narrow {
 .social-link-3,
 .social-link-4,
 .sec-header__logo-wrapper,
-.nav-link,
+.sec-header .nav-link,
 .sec-header__menu-btn {
   opacity: 0;
 }

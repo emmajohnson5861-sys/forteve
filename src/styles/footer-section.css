@@ -140,6 +140,13 @@
   color: #474747 !important;
 }
 
+/* Extra specificity to override global .nav-text { color: white } from shared CSS */
+.footer .nav-text,
+footer .nav-text {
+  color: #474747 !important;
+  text-transform: none !important;
+}
+
 .footer_link:hover .nav-text,
 .footer_template-link:hover .nav-text {
   transform: translateY(-100%) !important;
